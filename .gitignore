@@ -1,0 +1,8 @@
+node_modles/
+backend/node_modules/
+
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+.DB_Store
+Thumbs.db

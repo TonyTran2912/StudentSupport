@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng nhập - Student Support Portal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="PageTransitionOverlay">
+      <div class="spinner"></div>
+    </div>
+    <header>
+      <div class="logo">
+        <h1>🎓 Student Support Portal</h1>
+      </div>
+    </header>
+    <main class="login-container">
+      <h2>🔐 Đăng nhập hệ thống</h2>
+      <form id="LoginForm">
+        <label for="username">Tên đăng nhập:</label>
+        <input type="text" id="username" required />
+
+        <label for="password">Mật khẩu:</label>
+        <div class="password-container">
+          <input type="password" id="password" required />
+          <span class="toggle-password" data-target="password">👁</span>
+        </div>
+
+        <button type="submit">Đăng nhập</button>
+      </form>
+      <p id="LoginMessage"></p>
+      <p>
+        Chưa có tài khoàn?
+        <a href="register.html"> Đăng ký</a>
+      </p>
+    </main>
+
+    <footer>
+      <p>
+        © 2025 Student Support Portal | Tran Ngoc Duc
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thông báo - Student Support Portal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="PageTransitionOverlay">
+      <div class="spinner"></div>
+    </div>
+    <header>
+      <button id="OpenNavBtn" class="hamburger-btn">☰</button>
+      <div class="logo">
+        <h1>🎓 Student Support</h1>
+      </div>
+    </header>
+
+    <div id="MySideNav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" id="CloseNavBtn">&times;</a>
+
+      <div class="sidenav-user">
+        <div id="SideNavUsername">Khách</div>
+        <small id="SideNavRole">...</small>
+      </div>
+      <hr />
+
+      <a href="main.html">🏠 Trang chủ</a>
+      <a href="notice.html">📢 Thông báo</a>
+      <a href="support.html">💬 Hỗ trợ</a>
+      <a href="document.html">📚 Tài liệu</a>
+
+      <hr />
+      <a href="#" id="SideNavChangePass">🔐 Đổi mật khẩu</a>
+      <a href="#" id="SideNavDelete">❌ Xóa tài khoản</a>
+      <a href="index.html" id="SideNavLogout">🚪 Đăng xuất</a>
+    </div>
+
+    <h2>💬 Trung tâm hỗ trợ sinh viên</h2>
+    <p>Xin chào, Đây là nơi bạn có thể tâm sự hoặc yêu cầu hỗ trợ</p>
+
+    <div id="SupportContainer">
+      <!-- Danh sách người dùng (chỉ hiện cho admin) -->
+      <div id="UserList" class="user-list"></div>
+
+      <!-- Khung chat -->
+      <div id="ChatBox" class="chat-box">
+        <div id="ChatHeader">Chọn người để trò chuyện</div>
+        <div id="ChatMessages" class="chat-messages"></div>
+        <form
+          id="ChatForm"
+          class="chat-form"
+          style="display: none"
+          enctype="multipart/form-data"
+        >
+          <label for="ChatFile" class="plus-btn">+</label>
+
+          <input type="file" id="ChatFile" style="display: none" />
+
+          <input type="text" id="ChatInput" placeholder="Nhập tin nhắn..." />
+          <button type="submit">Gửi</button>
+        </form>
+        <div
+          id="FileNamePreview"
+          style="
+            font-size: 12px;
+            color: gray;
+            padding-left: 10px;
+            display: none;
+          "
+        ></div>
+      </div>
+    </div>
+
+    <div id="ChangePassModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3>🔐 Đổi mật khẩu</h3>
+        <form id="ChangePassForm">
+          <label>Mật khẩu cũ:</label>
+          <input
+            type="password"
+            id="OldPass"
+            required
+            placeholder="Nhập mật khẩu hiện tại"
+          />
+
+          <label>Mật khẩu mới:</label>
+          <input
+            type="password"
+            id="NewPass"
+            required
+            placeholder="Nhập mật khẩu mới"
+          />
+
+          <button type="submit" style="margin-top: 15px; width: 100%">
+            Lưu thay đổi
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2025 Student Support Portal | Tran Ngoc Duc</p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="support.js"></script>
+  </body>
+</html>

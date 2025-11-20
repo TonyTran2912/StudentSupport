@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng ký - Student Support Portal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="PageTransitionOverlay">
+      <div class="spinner"></div>
+    </div>
+    <header>
+      <div class="logo">
+        <h1>🎓 Student Support Portal</h1>
+      </div>
+    </header>
+    <main class="login-container">
+      <h2>📝 Đăng ký tài khoản</h2>
+
+      <form id="RegisterForm">
+        <label for="reg-username">Tên đăng nhập:</label>
+        <input
+          type="text"
+          id="reg-username"
+          required
+          placeholder="Nhập tên đăng nhập..."
+        />
+
+        <label for="reg-password">Mật khẩu (Tối thiểu 6 ký tự):</label>
+        <div class="password-container">
+          <input
+            type="password"
+            id="reg-password"
+            required
+            placeholder="Nhập mật khẩu..."
+          />
+          <span class="toggle-password" data-target="reg-password">👁</span>
+        </div>
+
+        <label for="confirm-password">Xác nhận mật khẩu:</label>
+        <div class="password-container">
+          <input
+            type="password"
+            id="confirm-password"
+            required
+            placeholder="Nhập lại mật khẩu..."
+          />
+          <span class="toggle-password" data-target="confirm-password">👁</span>
+        </div>
+
+        <button type="submit">Đăng ký</button>
+      </form>
+
+      <p id="RegisterMessage"></p>
+      <p>
+        Đã có tài khoản?
+        <a href="index.html">Đăng nhập</a>
+      </p>
+    </main>
+    <footer>
+      <p>© 2025 Student Support Portal | Tran Ngoc Duc</p>
+    </footer>
+    <script src="register.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

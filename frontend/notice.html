@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thông báo - Student Support Portal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="PageTransitionOverlay">
+      <div class="spinner"></div>
+    </div>
+    <header>
+      <button id="OpenNavBtn" class="hamburger-btn">☰</button>
+      <div class="logo">
+        <h1>🎓 Student Support</h1>
+      </div>
+    </header>
+
+    <div id="MySideNav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" id="CloseNavBtn">&times;</a>
+
+      <div class="sidenav-user">
+        <div id="SideNavUsername">Khách</div>
+        <small id="SideNavRole">...</small>
+      </div>
+      <hr />
+
+      <a href="main.html">🏠 Trang chủ</a>
+      <a href="notice.html">📢 Thông báo</a>
+      <a href="support.html">💬 Hỗ trợ</a>
+      <a href="document.html">📚 Tài liệu</a>
+
+      <hr />
+      <a href="#" id="SideNavChangePass">🔐 Đổi mật khẩu</a>
+      <a href="#" id="SideNavDelete">❌ Xóa tài khoản</a>
+      <a href="index.html" id="SideNavLogout">🚪 Đăng xuất</a>
+    </div>
+
+    <main>
+      <section class="notice-page">
+        <h2>📢 Danh sách thông báo</h2>
+
+        <div id="NoticeList" class="notice-list"></div>
+
+        <div class="pagination">
+          <button id="PrevPage">⬅️ Trước</button>
+          <span id="PageInfo">Trang 1</span>
+          <button id="NextPage">➡️ Sau</button>
+        </div>
+
+        <div id="AdminNoticeForm" class="admin-form" style="display: none">
+          <h3>📝 Đăng thông báo mới</h3>
+          <form id="AddNoticeForm" enctype="multipart/form-data">
+            <input
+              type="text"
+              id="NoticeTitle"
+              placeholder="Tiêu đề thông báo"
+              required
+            />
+            <textarea
+              id="NoticeContent"
+              placeholder="Nội dung thông báo"
+              required
+            ></textarea>
+
+            <div style="margin-bottom: 10px">
+              <label style="font-size: 14px; color: #555"
+                >📸 Chọn ảnh minh họa (nếu có):</label
+              >
+              <input type="file" id="NoticeFile" accept="image/*" />
+            </div>
+
+            <button type="submit">Đăng thông báo</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <div id="ChangePassModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3>🔐 Đổi mật khẩu</h3>
+        <form id="ChangePassForm">
+          <label>Mật khẩu cũ:</label>
+          <input
+            type="password"
+            id="OldPass"
+            required
+            placeholder="Nhập mật khẩu hiện tại"
+          />
+
+          <label>Mật khẩu mới:</label>
+          <input
+            type="password"
+            id="NewPass"
+            required
+            placeholder="Nhập mật khẩu mới"
+          />
+
+          <button type="submit" style="margin-top: 15px; width: 100%">
+            Lưu thay đổi
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        © 2025 Student Support Portal | Tran Ngoc Duc
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="notice.js"></script>
+  </body>
+</html>
