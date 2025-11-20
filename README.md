@@ -1,49 +1,97 @@
 # 🎓 Student Care Portal - Hệ thống Hỗ trợ Sinh viên
 
-N24DCCN017 - Trần Ngọc Đức
+Trần Ngọc Đức - N24DCCN017
 
-Đây là dự án web application giúp kết nối Sinh viên và Nhà trường, hỗ trợ tra cứu tài liệu, xem thông báo và chat trực tuyến với Admin.
+## 📖 Giới thiệu
 
-## 🚀 Tính năng nổi bật
+**Student Care Portal** là ứng dụng web giúp kết nối Sinh viên và Nhà trường. Hệ thống cung cấp công cụ quản trị trực quan, kho tài liệu học tập thông minh và kênh hỗ trợ trực tuyến thời gian thực.
 
-- **Dashboard Quản trị:** Thống kê số liệu trực quan với biểu đồ (Chart.js).
-- **Hệ thống Tài khoản:** Đăng ký, Đăng nhập, Đổi mật khẩu, Phân quyền (Admin/Student).
-- **Kho Tài liệu thông minh:**
-  - Upload file vật lý (Ảnh, PDF, Video...) lưu trữ trực tiếp trên Server.
-  - **Smart Preview:** Xem trước video Youtube, file PDF, Video MP4 ngay trên web.
-  - Đánh giá (Rating) và Bình luận tài liệu.
-- **Live Chat Support:**
-  - Chat 1-1 giữa Sinh viên và Admin.
-  - Gửi tin nhắn kèm tệp đính kèm đa phương tiện.
-- **Trải nghiệm người dùng (UX):** Giao diện Responsive, hiệu ứng Loading mượt mà.
+## 🚀 Tính năng nổi bật (Highlights)
 
-## 🛠️ Công nghệ sử dụng
+1.  **📊 Dashboard Quản trị (Admin):**
 
-- **Frontend:** HTML5, CSS3, Vanilla JavaScript.
-- **Backend:** Node.js, Express.js.
-- **Database:** MongoDB (Cloud Atlas).
-- **Libraries:** Mongoose, Multer (Upload file), BCrypt (Hash pass), Chart.js.
+    - Thống kê tổng quan hệ thống.
+    - Biểu đồ động (Visual Charts) phân tích dữ liệu người dùng và tài liệu.
+
+2.  **📂 Kho Tài liệu & Thông báo:**
+
+    - **Upload File vật lý:** Hỗ trợ tải file ảnh, PDF, Video, Word... lưu trữ trực tiếp trên Server.
+    - **Smart Preview:** Tự động nhận diện và cho phép xem trước video Youtube, file PDF, Video MP4 ngay trên trình duyệt mà không cần tải về.
+    - Tương tác: Đánh giá (Rating 5 sao) và Bình luận.
+
+3.  **💬 Hỗ trợ trực tuyến (Live Chat):**
+
+    - Chat 1-1 giữa Sinh viên và Admin.
+    - Gửi tin nhắn kèm tệp đính kèm (Ảnh/Video/File).
+
+4.  **🔐 Hệ thống Tài khoản & Bảo mật:**
+
+    - Phân quyền Admin / Sinh viên.
+    - Mã hóa mật khẩu (Bcrypt), Đăng nhập/Đăng ký an toàn.
+    - Tính năng Đổi mật khẩu & Reset mật khẩu (cho Admin).
+
+5.  **✨ Trải nghiệm người dùng (UX):**
+    - Giao diện Responsive (Mobile/Desktop).
+    - Hiệu ứng Loading chuyển trang mượt mà.
 
 ---
 
-## ⚙️ Hướng dẫn Cài đặt & Chạy dự án
+## ⚠️ Lưu ý quan trọng (Về dữ liệu File/Ảnh)
 
-Để chạy dự án này trên máy của bạn, vui lòng làm theo các bước sau:
+Do dự án sử dụng cơ chế **Local File Storage** (Lưu file vào ổ cứng máy chủ tại thư mục `backend/uploads`) và sử dụng `.gitignore` để không đẩy các file rác lên GitHub, nên:
 
-### 1. Cài đặt Backend (Server)
+- Khi tải code về máy mới, thư mục `uploads` sẽ **rỗng**.
+- **Hiện tượng:** Các tài liệu/tin nhắn cũ (được lưu link trong Database Cloud) vẫn hiện tên, nhưng **hình ảnh/file đính kèm sẽ không hiển thị** (do thiếu file gốc trên máy).
+- **Giải pháp:** Vui lòng **thử Upload tài liệu hoặc gửi ảnh Chat mới**. Tính năng sẽ hoạt động hoàn hảo và file mới sẽ hiển thị bình thường.
 
-Cần cài đặt [Node.js](https://nodejs.org/) trước.
+---
 
-```bash
-# clone repo
-git clone
+## ⚙️ Hướng dẫn Cài đặt & Chạy
 
-# Di chuyển vào thư mục backend
-cd backend
+### Yêu cầu
 
-# Cài đặt các thư viện cần thiết (như trong package.json)
-npm install
+- Đã cài đặt **Node.js**.
+- Nếu chưa có cần cài đặt [Node.js](https://nodejs.org/) trước.
 
-# Khởi động Server
-npm run dev
-```
+### Bước 1: Khởi động Backend (Server)
+
+1.  di chuyển đến hoặc mở thư mục tại `backend`.
+    ```bash
+    cd backend
+    ```
+2.  Cài đặt thư viện:
+    ```bash
+    npm install
+    ```
+3.  Chạy Server:
+    ```bash
+    npm run dev
+    ```
+    - Server sẽ chạy tại: `http://localhost:5000`
+    - _Database MongoDB đã được cấu hình mở (Allow All IP), không cần setup thêm._
+
+### Bước 2: Chạy Frontend (Giao diện)
+
+1.  Vào thư mục `frontend`.
+2.  Mở file `index.html` trực tiếp bằng trình duyệt (Chrome/Edge).
+    - _(Khuyên dùng Extension "Live Server" trên VS Code để có trải nghiệm tốt nhất)._
+
+---
+
+## 🔐 Tài khoản Demo
+
+Hệ thống đã có sẵn dữ liệu mẫu để trải nghiệm ngay:
+
+| Vai trò                | Username         | Password |
+| :--------------------- | :--------------- | :------- |
+| **Admin** (Toàn quyền) | `admin`          | `123456` |
+| **Sinh viên**          | `có thể tạo mới` | `tùy ý`  |
+
+---
+
+## 🛠️ Tech Stack (Công nghệ)
+
+- **Frontend:** HTML5, CSS3, Vanilla JavaScript (ES6+), Chart.js.
+- **Backend:** Node.js, Express.js.
+- **Database:** MongoDB Atlas (Cloud).
+- **Libraries:** Mongoose, Multer (Upload), BcryptJS, Cors, Dotenv.
