@@ -56,51 +56,116 @@
         </ul>
       </section>
       <section id="AccountManagementSection" style="display: none">
-  <h2>👑 Quản lý hệ thống</h2>
-  
-  <div class="dashboard-container" style="display: flex; gap: 20px; margin-bottom: 30px; flex-wrap: wrap;">
-      
-      <div style="flex: 1; background: #e3f2fd; padding: 20px; border-radius: 10px; min-width: 250px;">
-          <h3 style="margin-top:0; color:#004aad;">📊 Tổng quan</h3>
-          <ul style="list-style: none; padding: 0; font-size: 1.1em;">
+        <h2>👑 Quản lý hệ thống</h2>
+
+        <div
+          class="dashboard-container"
+          style="display: flex; gap: 20px; margin-bottom: 30px; flex-wrap: wrap"
+        >
+          <div
+            style="
+              flex: 1;
+              background: #e3f2fd;
+              padding: 20px;
+              border-radius: 10px;
+              min-width: 250px;
+            "
+          >
+            <h3 style="margin-top: 0; color: #004aad">📊 Tổng quan</h3>
+            <ul style="list-style: none; padding: 0; font-size: 1.1em">
               <li>👤 Tổng thành viên: <strong id="TotalUsers">0</strong></li>
               <li>📢 Tổng thông báo: <strong id="TotalNotices">0</strong></li>
               <li>📚 Tổng tài liệu: <strong id="TotalDocs">0</strong></li>
-          </ul>
-      </div>
+            </ul>
+          </div>
 
-      <div style="flex: 1; background: white; padding: 10px; border: 1px solid #ddd; border-radius: 10px; min-width: 300px;">
-          <canvas id="ActivityChart"></canvas>
-      </div>
+          <div
+            style="
+              flex: 1;
+              background: white;
+              padding: 10px;
+              border: 1px solid #ddd;
+              border-radius: 10px;
+              min-width: 300px;
+            "
+          >
+            <canvas id="ActivityChart"></canvas>
+          </div>
 
-      <div style="flex: 1; background: white; padding: 10px; border: 1px solid #ddd; border-radius: 10px; min-width: 300px;">
-        <div style="max-width: 350px; margin: 0 auto;">
-        <canvas id="RoleChart"></canvas>
-        </div> 
-      </div>
-  </div>
-  <h3>Danh sách tài khoản</h3>
-  <p>Quản lý người dùng, đặt lại mật khẩu hoặc xóa tài khoản.</p>
+          <div
+            style="
+              flex: 1;
+              background: white;
+              padding: 10px;
+              border: 1px solid #ddd;
+              border-radius: 10px;
+              min-width: 300px;
+            "
+          >
+            <div style="max-width: 350px; margin: 0 auto">
+              <canvas id="RoleChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <h3>Danh sách tài khoản</h3>
+        <p>Quản lý người dùng, đặt lại mật khẩu hoặc xóa tài khoản.</p>
 
         <div style="overflow-x: auto">
           <table
             id="UserTable"
-            style="width: 100%; border-collapse: collapse; margin-top: 15px; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1);"
+            style="
+              width: 100%;
+              border-collapse: collapse;
+              margin-top: 15px;
+              background: white;
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            "
           >
             <thead>
               <tr style="background-color: #004aad; color: white">
                 <th style="padding: 12px; border: 1px solid #ddd">#</th>
-                <th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Username</th>
-                <th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Role</th>
-                <th style="padding: 12px; border: 1px solid #ddd; text-align: center;">Mật khẩu</th>
-                <th style="padding: 12px; border: 1px solid #ddd; text-align: center;">Hành động</th>
+                <th
+                  style="
+                    padding: 12px;
+                    border: 1px solid #ddd;
+                    text-align: left;
+                  "
+                >
+                  Username
+                </th>
+                <th
+                  style="
+                    padding: 12px;
+                    border: 1px solid #ddd;
+                    text-align: left;
+                  "
+                >
+                  Role
+                </th>
+                <th
+                  style="
+                    padding: 12px;
+                    border: 1px solid #ddd;
+                    text-align: center;
+                  "
+                >
+                  Mật khẩu
+                </th>
+                <th
+                  style="
+                    padding: 12px;
+                    border: 1px solid #ddd;
+                    text-align: center;
+                  "
+                >
+                  Hành động
+                </th>
               </tr>
             </thead>
-            <tbody>
-                </tbody>
+            <tbody></tbody>
           </table>
         </div>
-      <script src="admin.js"></script>
+      </section>
     </main>
     <div id="ChangePassModal" class="modal">
       <div class="modal-content">
@@ -131,12 +196,11 @@
     </div>
 
     <footer>
-      <p>
-        © 2025 Student Support Portal | Tran Ngoc Duc
-      </p>
+      <p>© 2025 Student Support Portal | Tran Ngoc Duc</p>
     </footer>
-    <script src="admin.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="admin.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
