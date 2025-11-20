@@ -67,9 +67,7 @@ Do dự án sử dụng cơ chế **Local File Storage** (Lưu file vào ổ c�
     ```bash
     npm run dev
     ```
-    - Server sẽ chạy tại: ``
-    - _Database MongoDB đã được cấu hình mở (Allow All IP), không cần setup thêm._
-
+    
 ### Bước 2: Chạy Frontend (Giao diện)
 
 1.  Vào thư mục `frontend`.
