@@ -2,6 +2,11 @@
 
 Trần Ngọc Đức - N24DCCN017
 
+## 🌐 Live Demo (Dùng thử ngay)
+
+Dự án đã được deploy trực tuyến tại Render. Server được tối ưu để phản hồi nhanh chóng.
+👉 **Link Web:** [https://studentsupport-glo4.onrender.com/]
+
 ## 📖 Giới thiệu
 
 **Student Care Portal** là ứng dụng web giúp kết nối Sinh viên và Nhà trường. Hệ thống cung cấp công cụ quản trị trực quan, kho tài liệu học tập thông minh và kênh hỗ trợ trực tuyến thời gian thực.
@@ -38,11 +43,10 @@ Trần Ngọc Đức - N24DCCN017
 
 ## ⚠️ Lưu ý quan trọng (Về dữ liệu File/Ảnh)
 
-Do dự án sử dụng cơ chế **Local File Storage** (Lưu file vào ổ cứng máy chủ tại thư mục `backend/uploads`) và sử dụng `.gitignore` để không đẩy các file rác lên GitHub, nên:
-
-- Khi tải code về máy mới, thư mục `uploads` sẽ **rỗng**.
-- **Hiện tượng:** Các tài liệu/tin nhắn cũ (được lưu link trong Database Cloud) vẫn hiện tên, nhưng **hình ảnh/file đính kèm sẽ không hiển thị** (do thiếu file gốc trên máy).
-- **Giải pháp:** Vui lòng **thử Upload tài liệu hoặc gửi ảnh Chat mới**. Tính năng sẽ hoạt động hoàn hảo và file mới sẽ hiển thị bình thường.
+> ⚠️ **LƯU Ý VỀ DỮ LIỆU (FILE/ẢNH):**
+> Do sử dụng gói **Render Free Tier** (Ephemeral Storage), dữ liệu hình ảnh/tài liệu upload sẽ **tự động bị xóa** khi server khởi động lại hoặc bảo trì (định kỳ).
+> * **Hiện tượng:** Ảnh cũ có thể bị lỗi hiển thị.
+> * **Giải pháp:** Vui lòng **thử upload ảnh/tài liệu mới**. Tính năng sẽ hoạt động bình thường ngay lập tức!
 
 ---
 
