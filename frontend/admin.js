@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   let usersData = [];
 
   try {
-    const res = await fetch("http://localhost:5000/api/auth/all");
+    const res = await fetch("/api/auth/all");
     usersData = await res.json();
     renderUserTable(usersData);
   } catch (err) {
@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
       // 1. Gọi API lấy số lượng Thông báo & Tài liệu
       const [resNotices, resDocs] = await Promise.all([
-        fetch("http://localhost:5000/api/content/notices"),
-        fetch("http://localhost:5000/api/content/documents"),
+        fetch("/api/content/notices"),
+        fetch("/api/content/documents"),
       ]);
 
       const notices = await resNotices.json();
@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           if (confirm(`Reset pass của ${user.username} về 123456?`)) {
             try {
               const r = await fetch(
-                `http://localhost:5000/api/auth/reset-password/${user.username}`,
+                `/api/auth/reset-password/${user.username}`,
                 { method: "PUT" }
               );
               const d = await r.json();
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!confirm(`Xóa ${usernameToDelete}?`)) return;
     try {
       const res = await fetch(
-        `http://localhost:5000/api/auth/delete/${usernameToDelete}?role=${role}&requester=${localStorage.getItem(
+        `/api/auth/delete/${usernameToDelete}?role=${role}&requester=${localStorage.getItem(
           "username"
         )}`,
         { method: "DELETE" }

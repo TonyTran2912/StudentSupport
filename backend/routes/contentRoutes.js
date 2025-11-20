@@ -34,7 +34,7 @@ router.post("/notices", upload.single("file"), async (req, res) => {
     const { title, content } = req.body;
     let imagePath = "";
     if (req.file) {
-      imagePath = `http://localhost:5000/uploads/${req.file.filename}`;
+      imagePath = `/uploads/${req.file.filename}`;
     }
     const newNotice = new Notice({ title, content, image: imagePath });
     await newNotice.save();
@@ -76,7 +76,7 @@ router.post("/documents", upload.single("file"), async (req, res) => {
 
     if (req.file) {
       // Tạo đường dẫn đầy đủ để frontend truy cập
-      fileLink = `http://localhost:5000/uploads/${req.file.filename}`;
+      fileLink = `/uploads/${req.file.filename}`;
     } else {
       // Fallback: Nếu user không up file mà gửi link text (dự phòng)
       fileLink = req.body.link || "";

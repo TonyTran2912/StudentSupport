@@ -22,7 +22,7 @@ router.post("/", upload.single("file"), async (req, res) => {
     let attachmentPath = "";
 
     if (req.file) {
-      attachmentPath = `http://localhost:5000/uploads/${req.file.filename}`;
+      attachmentPath = `/uploads/${req.file.filename}`;
     }
 
     // Nếu không có chữ cũng không có file thì lỗi

@@ -25,9 +25,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     try {
       const user1 = username;
       const user2 = currentChatUser;
-      const res = await fetch(
-        `http://localhost:5000/api/chat/${user1}/${user2}`
-      );
+      const res = await fetch(`/api/chat/${user1}/${user2}`);
       const messages = await res.json();
       renderMessages(messages);
     } catch (err) {
@@ -148,7 +146,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   // --- LOGIC ADMIN ---
   if (role === "admin") {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/all");
+      const res = await fetch("/api/auth/all");
       const users = await res.json();
 
       userListEl.innerHTML = "<h4>📋 Chọn sinh viên:</h4>";
@@ -207,7 +205,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       }
 
       try {
-        await fetch("http://localhost:5000/api/chat", {
+        await fetch("/api/chat", {
           method: "POST",
           body: formData,
         });

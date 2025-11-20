@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const noticeList = document.getElementById("NoticeList");
   const adminForm = document.getElementById("AdminNoticeForm");
 
-  const API_URL = "http://localhost:5000/api/content/notices";
+  const API_URL = "/api/content/notices";
 
   // Hiển thị Form Admin nếu là Admin
   if (role === "admin" && adminForm) {

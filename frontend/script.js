@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (confirm("⚠️ CẢNH BÁO: Bạn có chắc muốn xóa tài khoản vĩnh viễn?")) {
         try {
           const res = await fetch(
-            `http://localhost:5000/api/auth/delete/${u}?role=${r}&requester=${u}`,
+            `/api/auth/delete/${u}?role=${r}&requester=${u}`,
             { method: "DELETE" }
           );
           const data = await res.json();
@@ -184,14 +184,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const newPassword = document.getElementById("NewPass").value.trim();
 
       try {
-        const res = await fetch(
-          "http://localhost:5000/api/auth/change-password",
-          {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ username, oldPassword, newPassword }),
-          }
-        );
+        const res = await fetch("/api/auth/change-password", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, oldPassword, newPassword }),
+        });
 
         const data = await res.json();
         if (res.ok) {
@@ -223,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
       msg.style.color = "gray";
 
       try {
-        const res = await fetch("http://localhost:5000/api/auth/login", {
+        const res = await fetch("/api/auth/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

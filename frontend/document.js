@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const addForm = document.getElementById("AddDocumentForm");
   const searchInput = document.getElementById("SearchInput");
 
-  const API_URL = "http://localhost:5000/api/content/documents";
+  const API_URL = "/api/content/documents";
   let allDocs = [];
 
   // --- HIỂN THỊ ---
@@ -170,10 +170,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (delBtn) {
         delBtn.addEventListener("click", async () => {
           if (confirm("Xóa tài liệu này?")) {
-            await fetch(
-              `http://localhost:5000/api/content/documents/${doc._id}`,
-              { method: "DELETE" }
-            );
+            await fetch(`/api/content/documents/${doc._id}`, {
+              method: "DELETE",
+            });
             fetchDocuments();
           }
         });
@@ -187,14 +186,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const text = commentForm.querySelector("input").value.trim();
         if (!text) return;
         try {
-          await fetch(
-            `http://localhost:5000/api/content/documents/${doc._id}/comment`,
-            {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ user: username, text }),
-            }
-          );
+          await fetch(`/api/content/documents/${doc._id}/comment`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ user: username, text }),
+          });
           fetchDocuments();
         } catch (err) {
           console.error(err);
@@ -208,14 +204,11 @@ document.addEventListener("DOMContentLoaded", function () {
           if (!username) return alert("Vui lòng đăng nhập!");
           const value = parseInt(star.getAttribute("data-val"));
           try {
-            await fetch(
-              `http://localhost:5000/api/content/documents/${doc._id}/rating`,
-              {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ user: username, value }),
-              }
-            );
+            await fetch(`/api/content/documents/${doc._id}/rating`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ user: username, value }),
+            });
             fetchDocuments();
           } catch (err) {
             console.error(err);

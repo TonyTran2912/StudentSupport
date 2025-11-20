@@ -20,19 +20,25 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+// Mở cửa thư mục Uploads (Để xem ảnh)
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
+// KẾT NỐI FRONTEND (QUAN TRỌNG NHẤT)
+// Trỏ ra ngoài thư mục backend để lấy file html trong frontend
+app.use(express.static(path.join(__dirname, "../frontend")));
 
 connectDB().then(() => {
   createDefaultAdmin();
 });
 
-// Routes
+// API Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/content", contentRoutes);
 
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
-
-app.get("/", (req, res) => {
-  res.send("🚀 Backend Student Support đang chạy!");
+// FALLBACK: Mọi link lạ đều trả về index.html (Trang chủ)
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/index.html"));
 });
+
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
